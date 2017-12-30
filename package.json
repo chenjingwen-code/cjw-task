@@ -1,0 +1,22 @@
+{
+  "name": "express1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenjingwen-code/express1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenjingwen-code/express1/issues"
+  },
+  "homepage": "https://github.com/chenjingwen-code/express1#readme",
+  "devDependencies": {
+    "express": "^4.16.2"
+  }
+}
