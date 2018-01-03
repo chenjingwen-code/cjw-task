@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,  maximum-scale=1">
 	<title>任务四</title>
 <style type="text/css">
 body{
@@ -11,17 +11,17 @@ body{
 	padding: 0;
 }
 .header_middle{
-	font-size: 22px;
+	font-size: 20px;
 	color: white;
 	background-color: #5fc0cd;
 	height:60px;
 	line-height: 60px;
-	width: 100%
+	width: 100%;
 	position: fixed;
 	text-align: center;
 }
 .header_left{
-	font-size: 20px;
+	font-size: 18px;
 	text-decoration: none;
 	height: 60px;
 	line-height: 60px;
@@ -30,7 +30,7 @@ body{
 	left: 20px;
 }
 .header_right{
-	font-size: 20px;
+	font-size: 18px;
 	text-decoration: none;
 	height: 60px;
 	line-height: 60px;
@@ -38,9 +38,12 @@ body{
 	position: fixed;
 	right: 20px;
 }
-
-form{
-	height: 80px;
+.empty{
+	margin:0;
+	height: 60px;
+}
+div{
+	height: 70px;
 	width: 100%;
 	background-color: white;
 	margin-top: 10px;
@@ -54,23 +57,23 @@ img{
 }
 input{
 	border:0px;
+	width: auto;
 	color: #eff0f4;
-	font-size: 20px;
+	font-size: 18px;
 	position: relative;
 	left: 40px;
 }
 .login{
 	border:0px;
-	font-size: 20px;
-	color: white;
+	font-size: 18px;
     background-color: #5fc0cd;
     width: 100%;
-    height: 80px;	
+    height: 70px;	
     margin-top: 10px;
 }
 .missed{
 	float: right;
-	font-size: 16px;
+	font-size:15px;
 	color: #5fc0cd;
 	margin-top: 10px;
 	margin-right: 20px;
@@ -84,12 +87,14 @@ input{
 <a href="#" class="header_right">关闭</a>
 </header>
 <form>
+<div class="empty"></div>
+<div>	
 <img src="https://github.com/chenjingwen-code/task/blob/master/picture5.png?raw=true">
-<input  type="number" placeholder="请输入手机号"/>
-</form>
-<form>
+</div>
+<div>
 <img src="https://github.com/chenjingwen-code/task/blob/master/picture6.png?raw=true">
 <input type="password"  placeholder="请输入密码"/>
+</div>
 </form>
 <button class="login" type="button">登陆</button>
 <a href="#" class="missed">忘记密码</a> 
