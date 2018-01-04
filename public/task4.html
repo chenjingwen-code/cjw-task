@@ -49,6 +49,8 @@ div{
 	margin-top: 10px;
 }
 img{
+	width: 30px;(没有宽高，图片加载中不占位置，文字位置变化)
+	height:25px;
 	position: relative;
 	left: 20px;
 	top: 12px;
@@ -57,8 +59,9 @@ img{
 }
 input{
 	border:0px;
+	height: 40px;(增加高度，不会塌陷，略小于div高度，上下之间留一些边距)
+	line-height: 40px;(配合height，可实现文字居中)
 	width: 170px;
-	color: #eff0f4;
 	font-size: 18px;
 	position: relative;
 	left: 40px;
@@ -91,7 +94,7 @@ input{
 <div class="empty"></div>
 <div>	
 <img src="https://github.com/chenjingwen-code/task/blob/master/picture5.png?raw=true">
-<input type="number" placeholder="请输入手机号" >
+<input type="text" placeholder="请输入手机号" >
 </div>
 <div>
 <img src="https://github.com/chenjingwen-code/task/blob/master/picture6.png?raw=true">
