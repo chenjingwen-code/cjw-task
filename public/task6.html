@@ -95,10 +95,11 @@ li{
 
 .content{
     font-size: 1.3rem;
+    
 }
-
 .content .item{
-    width: 100%;
+    width: 100%
+    min-width:360px;
     border-bottom: 1px solid #eee;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -133,13 +134,17 @@ li{
     padding-left: 2.5rem;
     width: 50%;
     padding-top: 0.5rem;
+    overflow: hidden;text-overflow: ellipsis;
+    white-space: nowrap;
 }
-
+.empty{
+    height: 5rem;
+}
 footer {
     width: 100%;
     position: fixed;
     display: flex;
-    height: 50px;
+    height: 5rem ;
     background-color: #f8fafb;
     left: 0;
     right: 0;
@@ -381,6 +386,7 @@ footer {
             </div>
         </div>
     </div>
+    <div class="empty"></div>
     <footer>
         <div class="tab index">
             <i class="picture4"></i>
