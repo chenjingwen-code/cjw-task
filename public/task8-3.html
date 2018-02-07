@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,  maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<title>任务8-3</title>
+	<style type="text/css">
+		body{
+		margin:0;
+		font-size: 62.5%;
+		box-sizing: content-box;
+		background-color: #fafafa;
+	}
+		.header{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 3rem;
+			font-size: 1.4rem;
+			color: #29b078;
+			padding-left: 15rem;
+			padding-right: 15rem;
+		}
+		.header-left{
+			width: 15rem;
+		}
+		.header-right{
+			display: flex;
+			justify-content: space-around;
+			width: 15rem;
+		}
+		.weixin{
+			position: relative;
+		}
+		.extro-info1{
+			position: absolute;
+			top:100%;
+			left: -1.8rem;
+			display: none;
+			width: 6rem;
+			height: 6rem;
+		}
+		.weixin:hover .extro-info1{
+			display: block;
+		}
+		.menu{
+			width: 100%;
+			height: 5rem;
+			line-height: 5rem;
+			background-color: #29b078;
+			padding: 0 16rem;
+		}
+		.menu img{
+			float: left;
+			height: 5rem;
+		}
+		.submenu{
+			position: relative;
+			float: right;
+		    color: white;
+		    font-size: 1.2rem;
+		    margin-left: 4rem;
+		}
+		.submenu:link {
+           font-size: 12px;
+           text-decoration: none;
+        }
+        .submenu:visited {
+           font-size: 12px;
+           color: white;
+           text-decoration: none;
+        }
+        .submenu:hover {
+           font-size: 12px;
+           color: white;
+           text-decoration: none;
+        }
+		.extro-info2{
+			position: absolute;
+			left: -1.1rem;
+			bottom: 0;
+			height:0.2rem;
+			width: 5rem;
+			display: none;
+			background-color: white;
+		}
+		.submenu:hover .extro-info2{
+			display: block;
+		}
+        .title{
+        	padding: 2rem 15rem;
+        	font-size: 1.2rem;
+        }
+        .title span{
+        	color:#29b078; 
+        }
+        .section1{
+        	display: flex;
+        	height: 5rem;
+        	line-height: 5rem;
+        	font-size: 1.2rem;
+        	padding: 0 15rem;
+        	border-top: 1px solid #afafaf;
+        	border-bottom: 1px solid #afafaf;
+        }
+        .total{
+        	font-size: 1.4rem;
+        	color:#afafaf; 
+
+        }
+        .branch{
+        	height: 2rem;
+        	line-height: 2rem;
+        	font-size: 1.4rem;
+            margin:1.5rem 1rem;
+        }
+        .branch:hover{
+        	background-color: #29b078;
+        	color: white;
+        }
+        .subtitle{
+        	height: 6rem;
+        	line-height: 6rem;
+        	padding-left: 15rem;
+        	padding-right: 15rem;
+        	font-size: 1.6rem;
+        	font-weight: bold;
+        	border-bottom: 1px solid #afafaf;
+        }
+        .section2{
+        	display: flex;
+        	justify-content: space-between;
+        	padding-right: 15rem;
+        	padding-left: 15rem;
+        	}
+
+        .block{
+        	position: relative;
+        	width: 25rem;
+        	height: 31rem;
+        	border:1px solid  #afafaf;
+        	margin-top: 3rem;
+        	box-sizing: border-box;
+	
+        }
+        .row1{
+        	display: flex;
+        	width: 100%;
+        	height: 14rem;
+        	padding: 1rem;
+        	border-bottom: 1px solid #afafaf;
+        }
+        .row1 p{
+        	font-size: 1.4rem;
+        	padding-left: 1rem;
+        }
+        .row1 span{
+        	font-size: 1.6rem;
+        	font-weight: bold;
+        }
+        .row2{
+        	display: flex;
+        }
+        .row2 p{
+        	width: 50%;
+        	height: 2rem;
+        	line-height: 2rem;
+        	font-size: 1.2rem;
+        	padding-left: 1rem;
+        	border-bottom: 1px solid #afafaf;
+        	margin-bottom: 0;
+
+        }
+        .row3{
+        	display: flex;
+
+        }
+        .row3 span{
+        	color: red;
+        }
+        .row3 p{
+            width: 50%;
+        	height: 2rem;
+        	line-height: 2rem;
+        	font-size: 1.2rem;
+        	padding-left: 1rem;
+        	border-bottom: 1px solid #afafaf;
+        	margin-bottom: 0;
+        }
+        .right-border{
+        	border-right: 1px solid #afafaf;
+        }
+        .row4{
+        	display: flex;
+        	height: 6rem;
+
+        }
+        .left{
+        	width: 40%;
+        	height: 6rem;
+        	line-height: 6rem;
+        	text-align: center;
+        	font-size: 1.2rem;
+        	color: #afafaf;    	
+        	border-bottom: 1px solid #afafaf;
+        }
+        .right{
+        	width: 60%;
+        	height: 6rem;
+        	border-left: 1px solid #afafaf;
+        }
+        .right div{
+        	height: 2rem;
+        	line-height: 2rem;
+        	font-size: 1.2rem;
+        	padding-right: 1rem;
+        	padding-left: 1rem;       
+        	border-bottom: 1px solid #afafaf;
+        }
+        .left-side{
+        	float:left;
+        }
+        .right-side{
+        	float:right;
+        }
+        .row5{
+        	width: 100%;
+        	height: 3rem;
+        	line-height: 3rem;
+        	font-size: 1.6rem;
+        	font-weight: bold;
+        	padding-left: 1rem;
+        	border-bottom: 1px solid #afafaf;
+        }
+        .row5 span{
+        	color: red;
+        }
+        .row6{
+        	width: 100%;
+        	height: 2rem;
+        	line-height: 2rem;
+        	font-size: 1.2rem;
+        	color: #afafaf;
+        	padding-left: 1rem;
+        }
+        .extro-info3{
+            position: absolute;
+            top: 0;
+            background-color: rgba(12,12,12,0.7);
+            width: 25rem;
+            height: 31rem;
+            color: white;
+            padding:5rem 3rem;
+            font-size: 1.2rem;
+            display: none;
+        }
+        .extro-top{
+        	width: 100%;
+        	height: 2rem;
+        	line-height: 2rem;
+        	text-align: center;
+        	}        
+        .extro-bottom{
+        	text-indent: 2em;
+        }
+        .block:hover .extro-info3{
+        	display: block;
+        }
+        
+        .section3{
+        	display: flex;
+        	flex-wrap: wrap;
+        	justify-content: space-between;
+        	padding-right: 15rem;
+        	padding-left: 15rem;
+        }
+        .empty{
+        	width: 25rem;
+        	height: 35rem;
+        }
+        .section4{
+        	display: flex;
+        	justify-content: space-between;
+        	padding-right: 15rem;
+        	padding-left: 15rem;
+        	}
+        .section5{
+        	padding-left: 15rem;
+        }
+        .section6{
+			width: 100%;
+			height: 10rem;
+			padding-left: 15rem;
+			padding-right: 7rem;
+			color: white;
+			background-color: #26a26f;
+			margin-top: 5rem;
+		}
+		.box1{
+			width: 20rem;
+			float: left;
+		}
+		.line1{
+			height: 5rem;
+			line-height: 5rem;
+			font-size: 1.4rem;
+
+		}
+		.line2{
+			height: 2rem;
+			line-height: 2rem;
+			font-size: 1rem;
+		}
+		.line2 span{
+			padding-right: 3rem;
+		}
+		.box2{
+			width:15rem;
+			float: right;
+		}
+		.box2 .line{
+			margin-top: 1rem;
+			height: 2rem;
+			font-size: 1.4rem;
+		}
+		.box2 img{
+			width: 6rem;
+            height: 6rem;
+		}
+		.section6 a:link{
+			color: white;
+		}
+		.section6 a:visited{
+			color: white;
+		}
+		.section6 a:hover{
+			color: white;
+		}
+		.section7{
+			width: 100%;
+			height: 2rem;
+			line-height: 2rem;
+			text-align: center;
+			padding-left: 15rem;
+			padding-right: 15rem;
+			color: white;
+			border-top: 1px solid green;
+			background-color: #26a26f;
+		}
+	</style>
+</head>
+<body>
+<header class="header">
+	<div class="header-left">客服热线：010-594-78634</div>
+	<div class="header-right">
+		<a class="app" href="http://www.jnshu.com/download" target="_blank"><img src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/skill/skill_html/images/icon-nav-mobile.png"></a>
+	    <a class="weixin" href="#">
+	    	<img src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/skill/skill_html/images/weixin.png">
+	    	<img class="extro-info1" style="z-index: 9999" src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/skill/skill_html/images/code2.jpg">
+	    </a>				
+	    <a class="xinlang" href="https://weibo.com/u/5619279280" target="_blank"><img src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/skill/skill_html/images/weibo.png"></a>		
+	</div>
+</header>
+<div class="menu">
+	    <img src="https://github.com/chenjingwen-code/task/blob/master/images/31.jpg?raw=true">
+		<a class="submenu" href="#">
+			<div>关 于</div>
+		    <div class="extro-info2"></div>
+		</a>
+		<a class="submenu" href="http://118.25.20.105:3000/task8-2.html">
+			<div>推 荐</div>
+		    <div class="extro-info2"></div>
+		</a>
+		<a class="submenu" href="#http://118.25.20.105:3000/task8-3.html">
+			<div>职 业</div>
+		    <div class="extro-info2"></div>
+		</a>
+		<a class="submenu" href="http://118.25.20.105:3000/task8-1.html">
+			<div>首 页</div>
+		    <div class="extro-info2"></div>
+		</a>
+</div>
+<div class="title">
+	首页&gt<span>职业</span>
+</div>
+<div class="section1">
+	<span class="total">方向&#58</span>
+	<span class="branch">全部</span>
+	<span class="branch">前端开发</span>
+	<span class="branch">后端开发</span>
+	<span class="branch">移动开发</span>
+	<span class="branch">整站开发</span>
+	<span class="branch">运营维护</span>
+</div>
+<div class="subtitle">前端开发方向</div>
+<div class="section2">
+	<div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    	
+</div>
+<div class="subtitle">后端开发方向</div>
+<div class="section3">
+	<div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="empty"></div>
+</div>
+<div class="subtitle">运维方向</div>
+<div class="section4">
+	<div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+    <div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+</div>
+<div class="subtitle">前端开发方向</div>
+<div class="section5">
+	<div class="block">
+		<div class="row1">
+			<div>
+			     <img src="https://github.com/chenjingwen-code/task/blob/master/images/33.jpg?raw=true">
+			</div>
+		    <div>
+		        <p><span>Web前端工程师</span></p>
+	            <p>Web前端开发工程师，主要职责是利用各种Web技术进行产品的开发。</p>
+            </div>
+        </div> 
+        <div class="row2">
+        	<p class="right-border">门槛<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true"></p>
+        	<p>难易程度<img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""><img src="https://github.com/chenjingwen-code/task/blob/master/images/34.jpg?raw=true""></p>
+        </div>
+        <div class="row3">
+        	<p class="right-border">成长周期 <span>1-3年</span></p>
+        	<p>稀缺程度 <span>345</span>家公司需要</p>
+        </div> 
+        <div class="row4">
+        	<div class="left">薪资待遇</div>
+        	<div class="right">
+        		<div>
+        			<span class="left-side">0-1年</span>
+        			<span class="right-side">5k-10k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">1-3年</span>
+        			<span class="right-side">10k-20k/月</span>
+        		</div>
+        		<div>
+        			<span class="left-side">3-5年</span>
+        			<span class="right-side">20k-50k/月</span>
+        		</div>
+        	</div>
+        </div>
+        <div class="row5">有<span>286</span>人正在学</div>  
+        <div class="row6">提示：在你学习之前你应该已经掌握XXX、XXX、XX等语言基础</div>
+        <div class="extro-info3">
+        	<p class="extro-top">iOS工程师</p>
+        	<p class="extro-bottom">iOS是由苹果公司开发的移动操作系统。苹果公司最早于2007年1月9日的Macworld大会上公布这个系统，最初是设计给iPhone使用的，后来陆续套用到iPodtouch、iPad以及AppleTV等产品上。iOS与苹果的MacOSX操作系统一样，属于类Unix的商业操作系统。原本这个系统名为iPhone OS，因为iPad，iPhone，iPod touch都使用iPhoneOS，所以2010WWDC大会上宣布改名为iOS（iOS为美国Cisco公司网络设备操作系统注册商标，苹果改名已获得Cisco公司授权）。</p>
+        </div>
+    </div>
+	
+</div>
+<div class="section6">
+	<div class="box1">
+		<div class="line1">技能树——改变你我</div>
+		<div class="line2">关于我们 | <a href="http://www.jnshu.com/material/contact">联系我们</a> | <a href="http://www.jnshu.com/partner">合作企业</a></div>
+    </div>
+	<div class="box1">
+		<div class="line1">旗下网站</div>
+		<div class="line2"><span><a href="http://www.caochuanyun.com/home">草船云孵化器</a></span><span>最强IT培训营</span></div>
+		<div class="line2"><span><a href="http://game.ptteng.com/">葡萄藤轻游戏</a></span><span><a href="http://wiki.ptteng.com/?p=204">桌游精灵</a></span></div>
+	</div>
+	<div class="box2">
+		<div class="line">微信公众号</div>
+		<div><img src="http://jns.img.bucket.ks3-cn-beijing.ksyun.com/skill/skill_html/images/code2.jpg"></div>
+	</div>
+</div>
+<div class="section7">Copyright © 2015 北京葡萄藤信息技术有限公司 All Rights Reserved | 京ICP备15035574号-1</div>
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
