@@ -42,7 +42,8 @@ body{
 			height: 5rem;
 			line-height: 5rem;
 			background-color: #29b078;
-			padding: 0 16rem;
+			padding-right:16rem;
+			padding-left: 15rem;
 		}
 		.menu img{
 			float: left;

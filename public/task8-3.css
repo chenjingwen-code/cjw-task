@@ -42,7 +42,8 @@ body{
 			height: 5rem;
 			line-height: 5rem;
 			background-color: #29b078;
-			padding: 0 16rem;
+			padding-right:16rem;
+            padding-left: 15rem;
 		}
 		.menu img{
 			float: left;
@@ -93,7 +94,7 @@ body{
         	height: 5rem;
         	line-height: 5rem;
         	font-size: 1.2rem;
-        	padding: 0 15rem;
+        	margin: 0 15rem;
         	border-top: 1px solid #afafaf;
         	border-bottom: 1px solid #afafaf;
         }
@@ -115,8 +116,8 @@ body{
         .subtitle{
         	height: 6rem;
         	line-height: 6rem;
-        	padding-left: 15rem;
-        	padding-right: 15rem;
+        	margin-left: 15rem;
+        	margin-right: 15rem;
         	font-size: 1.6rem;
         	font-weight: bold;
         	border-bottom: 1px solid #afafaf;
@@ -124,6 +125,7 @@ body{
         .section2{
         	display: flex;
         	justify-content: space-between;
+            flex-wrap: wrap;
         	padding-right: 15rem;
         	padding-left: 15rem;
         	}
@@ -135,7 +137,7 @@ body{
         	border:1px solid  #afafaf;
         	margin-top: 3rem;
         	box-sizing: border-box;
-	
+            overflow: hidden;
         }
         .row1{
         	display: flex;
@@ -246,7 +248,9 @@ body{
             color: white;
             padding:5rem 3rem;
             font-size: 1.2rem;
-            display: none;
+            display:block;
+            transform: translateX(-25rem);
+            transition: transform 1s;
         }
         .extro-top{
         	width: 100%;
@@ -258,7 +262,8 @@ body{
         	text-indent: 2em;
         }
         .block:hover .extro-info3{
-        	display: block;
+        	transform: translateX(0);
+            
         }
         
         .section3{
@@ -270,15 +275,18 @@ body{
         }
         .empty{
         	width: 25rem;
-        	height: 35rem;
+        	height: 0.1rem;
         }
         .section4{
         	display: flex;
+            flex-wrap: wrap;
         	justify-content: space-between;
         	padding-right: 15rem;
         	padding-left: 15rem;
         	}
         .section5{
+            display: flex;
+            flex-wrap: wrap;
         	padding-left: 15rem;
         }
         .section6{

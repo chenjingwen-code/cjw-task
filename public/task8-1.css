@@ -303,6 +303,8 @@ body{
 			display: flex;
 			justify-content: center;
 			margin-top: 3rem;
+			margin-left: 10rem;
+			margin-right: 10rem;
 			height: 15rem;
 		}
 		.section4 img{
@@ -311,9 +313,6 @@ body{
 		}
 		.section4 img:hover{
 			box-shadow: 0.2rem 0.2rem 0.5rem #afafaf;
-		}
-		.section4 div {
-			
 		}
 		.section5{
 			width: 100%;
