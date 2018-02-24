@@ -18,5 +18,8 @@
   "homepage": "https://github.com/chenjingwen-code/express1#readme",
   "devDependencies": {
     "express": "^4.16.2"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
   }
 }
