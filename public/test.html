@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,  maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>test</title>
+
+<style type="text/css">
+body{
+	margin:0;
+	font-size: 62.5%;
+	box-sizing: border-box;
+	background-color: #fafafa;
+}
+	.section2{
+			margin-top: 2rem;
+
+		}
+		.step{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			width: 100%;
+			height: 4vw;
+			line-height: 4vw;
+			margin-top: 3vw;
+		}
+		.quarter{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+		}
+		.order{
+			width: 4vw;
+			text-align: center;
+			height: 4vw;
+			line-height:4vw;
+			font-size: 1.6rem;
+			font-weight: bold;
+            color: #29b078;
+            border:0.5px solid #afafaf;
+            border-radius: 50%;
+            background-color: #ffffff;
+		}
+		.step p{
+			display: flex;
+			align-content: center;
+			width: 10vw;
+			height: 2vw;
+			line-height:2vw;
+			font-size: 1rem;
+			color: #afafaf;
+			margin: 0;
+			padding: 0;
+		}
+		.special{
+			height: 4vw;
+			line-height: 4vw;
+		}
+		.icon{
+			height: 3vw;
+			line-height: 3vw;
+			width: 3vw;
+			text-align: center;
+		}
+		.icon img{
+			height: 3vw;
+			width: 3vw;
+		}
+@media screen and (max-width: 1080px){
+	.special-1{
+		height: unset;
+		line-height: unset;
+	}
+} 
+@media screen and (max-width:960px){
+	.special-2{
+		height: unset;
+		line-height: unset;
+	}
+}
+@media screen and (max-width:840px){
+    .step{
+    	margin-bottom:5vw;
+    }
+}
+@media screen and (max-width:768px){
+	.quarter{
+		margin-bottom: 4vw;
+	}
+	.step{
+		margin-bottom: 10vw;
+	}
+	.step p{
+		width: 30vw;
+		height: 2rem;
+		line-height: unset;
+	}
+}
+@media screen and (max-width:460px){
+	.quarter{
+		width: 100%;
+	}
+	.step{
+		margin-bottom: 15rem;
+	}
+	.step p{
+		width: 30vw;
+		height: 3rem;
+		line-height: unset;
+	}
+}
+
+		
+
+</style>
+</head>
+<body>
+
+<div class="sention2">
+	<div class="step">
+		<div class="container">
+			<div class="row">
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">1</div>
+					<p>匹配你现在的个人情况寻找适合自己的岗位</p>
+					<div class="icon"><img src="https://github.com/chenjingwen-code/task/blob/master/images/20.jpg?raw=true"></div>
+				</div>
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">2</div>
+					<p>了解职业前景薪金待遇、竞争压力等</p>
+					<div class="icon"><img src="https://github.com/chenjingwen-code/task/blob/master/images/20.jpg?raw=true"></div>
+				</div>
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">3</div>
+					<p><span class="special special-1">掌握行业内顶级技能</span></p>
+					<div class="icon"><img src="https://github.com/chenjingwen-code/task/blob/master/images/20.jpg?raw=true"></div>
+				</div>
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">4</div>
+					<p><span class="special special-2">查看职业目标任务</span></p>
+					<div class="icon"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="step">
+		<div class="container">
+			<div class="row">	    
+		    	<div class="quarter col-md-3 col-sm-3 col-xs-6">	
+					<div class="order">5</div>
+					<p>参考学习资源、掌握技能点逐个完成任务</p>
+					<div class="icon"><img src="https://github.com/chenjingwen-code/task/blob/master/images/20.jpg?raw=true"></div>
+				</div>
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">6</div>
+					<p>加入班级，和小伙伴互帮互助，一块学习</p>
+					<div class="icon"><img src="https://github.com/chenjingwen-code/task/blob/master/images/20.jpg?raw=true"></div>
+				</div>
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">7</div>
+					<p>选择导师，一路引导，加速自己成长</p>
+					<div class="icon"><img src="https://github.com/chenjingwen-code/task/blob/master/images/20.jpg?raw=true"></div>
+				</div>
+				<div class="quarter col-md-3 col-sm-3 col-xs-6">
+					<div class="order">8</div>
+					<p>完成职业技能升级业界大牛</p>
+					<div class="icon"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

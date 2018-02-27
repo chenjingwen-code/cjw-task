@@ -292,6 +292,7 @@ body{
 		}
 		.col-md-2:hover{
 			box-shadow: 0 0 0.1rem 0.1rem #afafaf;
+			z-index: 999;
 		}
 		.col-md-2 img{
 			width:100%;
