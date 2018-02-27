@@ -446,7 +446,7 @@ header{
 		width:25%;
 	}
 }
-@media screen and (max-width:380px){
+@media screen and (max-width:387px){
 	.col-xs-6{
 		width:50%;
 	}

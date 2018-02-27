@@ -279,13 +279,13 @@ header{
             
         }
 
-@media screen and (max-width: 768px){
+/*@media screen and (max-width: 768px){
     .block{
-        width: 24rem;
+        width:auto;
         margin:0 auto ;
         margin-top: 3rem;
     }
-}
+}*/
 
 .section6{
             width: 100%;
