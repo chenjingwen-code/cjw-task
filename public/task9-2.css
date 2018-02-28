@@ -89,19 +89,14 @@ header{
     background-color: transparent;
 }
 
-    
-@media screen and (max-width:760px){
-    
-.nav {
+@media screen and (max-width:768px){
+    .nav {
      float: none;
+    }  
+    .navbar-nav {
+        margin: 0;
     }
-.nav li:hover{
-        color: white;
-        border-bottom: none;
-    }
-
-
-}
+}   
 .picture1{
             float:left;
             height: 4rem;
@@ -130,7 +125,7 @@ header{
         	border:1px solid #afafaf;
         }
         
-        ul{
+        .firm ul{
         	list-style-type: none;
         	font-size: 1.2rem;
         	color:#f1a750;
@@ -138,18 +133,20 @@ header{
         	border-top: 0;
         	text-align: center;
         }
-        ul a{
+        .firm ul a{
         	position: relative;
         	text-decoration: none;
         }
         .firm li{
         	height: 3rem;
         	line-height: 3rem;
+            width: 10rem;
+            margin:0 auto;
         	/*display: flex;*/
         	/*align-items: center;*/
 
         }
-        li div{
+        .firm li div{
         	width: 0.7rem;
         	height: 0.7rem;
         	border:1px solid #f1a750;
@@ -157,16 +154,16 @@ header{
         	margin-right: 0.5rem;
         	display: inline-block;
         }
-        li span{
+        .firm li span{
         	color:#29b078;
         	display: inline-block;
         	width: 88px;
         	text-align: left;
         }
-        li:hover span{
+        .firm li:hover span{
         	color: #f1a750;
         }
-        li:hover div{
+        .firm li:hover div{
         	background-color: #f1a750;
         }
         

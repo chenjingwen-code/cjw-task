@@ -91,16 +91,15 @@ header{
     background-color: transparent;
 }
 
-@media screen and (max-width:760px){
 
-.nav {
+@media screen and (max-width:768px){
+    .nav {
      float: none;
+    }  
+    .navbar-nav {
+        margin: 0;
     }
-.nav li:hover{
-        color: white;
-        border-bottom: none;
-    }
-}
+}  
 .picture1{
             float:left;
             height: 4rem;
