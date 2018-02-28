@@ -42,7 +42,7 @@ header{
 
 .menu{
     background-color:#29b078;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 .navbar{
     background-color:#29b078;
@@ -257,9 +257,10 @@ header{
         .extro-info3{
             position: absolute;
             top: 0;
+            height: 100%;
             background-color: rgba(12,12,12,0.7);
             color: white;
-            padding:5rem 2rem 0 2rem;
+            padding:3rem 2rem 0 2rem;
             font-size: 1.2rem;
             display:block;
             transform: translateX(-100%);
