@@ -42,6 +42,7 @@ header{
 
 .menu{
     background-color:#29b078;
+    font-size: 1.4rem;
 }
 .navbar{
     background-color:#29b078;
@@ -147,7 +148,6 @@ header{
 
  .block{
             position: relative;
-            height: 31rem;
             border:1px solid  #afafaf;
             margin-top: 3rem;
             box-sizing: border-box;
@@ -156,13 +156,12 @@ header{
         .row1{
             display: flex;
             width: 100%;
-            height: 14rem;
             padding: 1rem;
             border-bottom: 1px solid #afafaf;
         }
-        .row1 img{
+       /* .row1 img{
               max-width: 100%;
-        }
+        }*/
         .row1 p{
             font-size: 1.4rem;
             padding-left: 1rem;
@@ -259,12 +258,11 @@ header{
             position: absolute;
             top: 0;
             background-color: rgba(12,12,12,0.7);
-            height: 31rem;
             color: white;
-            padding:5rem 3rem;
+            padding:5rem 2rem 0 2rem;
             font-size: 1.2rem;
             display:block;
-            transform: translateX(-25rem);
+            transform: translateX(-100%);
             transition: transform 1s;
         }
         .extro-top{
