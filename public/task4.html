@@ -42,6 +42,9 @@ body{
 	margin:0;
 	height: 60px;
 }
+form{
+	width: 100%;
+}
 div{
 	height: 70px;
 	width: 100%;
@@ -49,8 +52,6 @@ div{
 	margin-top: 10px;
 }
 img{
-	width: 30px;/*没有宽高，图片加载中不占位置，文字位置变化*/
-	height:25px;
 	position: relative;
 	left: 20px;
 	top: 12px;
@@ -66,13 +67,15 @@ input{
 	font-size: 18px;
 	position: relative;
 	left: 40px;
+	bottom:7px;
 }
 .login{
+	width: 100%;
 	border:0px;
+	padding: 0;
 	font-size: 18px;
 	color:white;
     background-color: #5fc0cd;
-    width: 100%;
     height: 70px;	
     margin-top: 10px;
 }
@@ -86,23 +89,23 @@ input{
 </style>
 </head>
 <body>
-<header class="header_middle">
-<a href="#" class="header_left">注册</a>
-登陆
-<a href="#" class="header_right">关闭</a>
-</header>
-<form>
-<div class="empty"></div>
-<div>	
-<img src="https://github.com/chenjingwen-code/task/blob/master/picture5.png?raw=true">
-<input type="text" placeholder="请输入手机号" >
-</div>
-<div>
-<img src="https://github.com/chenjingwen-code/task/blob/master/picture6.png?raw=true">
-<input type="password"  placeholder="请输入密码"/>
-</div>
-</form>
-<button class="login" type="button">登陆</button>
-<a href="#" class="missed">忘记密码</a> 
+	<header class="header_middle">
+		<a href="#" class="header_left">注册</a>
+		登陆
+		<a href="#" class="header_right">关闭</a>
+	</header>
+	<div class="empty"></div>
+	<form>
+		<div>	
+			<img src="https://github.com/chenjingwen-code/task/blob/master/picture5.png?raw=true">
+			<input type="text" placeholder="请输入手机号" >
+		</div>
+		<div>
+			<img src="https://github.com/chenjingwen-code/task/blob/master/picture6.png?raw=true">
+			<input type="password"  placeholder="请输入密码"/>
+		</div>
+	</form>
+	<button class="login" type="button">登陆</button>
+	<a href="#" class="missed">忘记密码</a> 
 </body>
 </html>
