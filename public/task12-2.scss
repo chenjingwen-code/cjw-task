@@ -1,0 +1,64 @@
+
+$width:100% !default;
+$white:#fff;
+$blue:#5fc0cd;
+$deepblue:#55a8b3;
+@mixin siz($width,$height){
+    width:$width;
+    height:$height;
+}
+body{
+    margin:0;
+    font-size:62.5%;
+    background-color: $white;
+}
+.header{
+    position:fixed;
+    top:0;
+    @mixin size($height:6rem);
+}
+.empty1{
+    @mixin size($height:6rem);
+}
+.footer{
+    position:fixed;
+    bottom:0;
+    @mixin size($height:6rem);
+}
+.empty2{
+    @mixin size($height:6rem);
+}
+
+
+
+
+
+.dropmenu{
+    width: 100%;
+    display: flex;
+    margin-top:4rem;
+    flex-direction: row;
+}
+.drop{
+    width: 33.3333%
+}
+.btn{
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+    border-right: 0;
+    outline: none;
+    color: #dadcdd;
+}
+.caret{
+    position: absolute;
+    right:1rem;
+    top: 1rem;
+}
+ul{
+    width: 100%;
+}
+li{
+    width: 100%;
+    text-align: center;
+}
