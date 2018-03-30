@@ -38,7 +38,7 @@ body{
     box-shadow: inset 0 0 0 2px $blue;
 }
 .header{
-    @include prim(100%,5rem,5rem,2rem,$white,$blue);
+    @include prim(100vw,5rem,5rem,2rem,$white,$blue);
     position: fixed;
     top:0;
     z-index: 1;
@@ -106,7 +106,6 @@ body{
 }
 .content{
     display: flex;
-    width: $width;
     margin:0 3rem;
     margin-top:1rem;
     padding-bottom:1rem;
