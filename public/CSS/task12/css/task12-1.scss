@@ -142,6 +142,7 @@ body{
     width: $width;
     min-width: 320px;
     max-width: 768px;
+    background-color: $white;
     .btn-left{
         @include prim(50%,5rem,5rem,2rem,$blue,$white);
         @include bnt(3rem,1rem);
