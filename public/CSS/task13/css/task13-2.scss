@@ -45,25 +45,32 @@ $orange:#fbb435;
     background-image: url(../img/10.png);
   }
   audio {
+    @include pt(1.2rem,100%);
     position: absolute;
     top:1.2rem;
     left: 100%;
     margin-left: -4rem;
     opacity: 0;
   }
+}
+.position{
+  position:relative;
   .triangle{
-    @include pt(100%,5rem);
+    @include pt(0,5rem);
     width:0;
     height:0;
-    border-width:1rem 0.7rem;
+    border-width:0.7rem 0.5rem;
     border-style:solid;
     border-color:#b9e9f5 #29bde0 #29bde0 #29bde0;
   }
   .discuss_vote{
-    @include pt(6.2rem,5rem);
+    @include pt(1rem,5rem);
+    font-size: 1.3rem;
     color: $white;
   }
 }
+
+
 .role{
   display: flex;
   flex-wrap: wrap;
