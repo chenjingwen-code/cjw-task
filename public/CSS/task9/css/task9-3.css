@@ -34,7 +34,7 @@ header{
         display: none;
     }
         .header-left + div {
-        width: 100%
+        width: 100%;
     }
  
  }

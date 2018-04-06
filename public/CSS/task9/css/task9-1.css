@@ -34,7 +34,7 @@ header{
 		display: none;
 	}
 	.header-left + div {
-		width: 100%
+		width: 100%;
 	}
  }
 
@@ -313,7 +313,8 @@ header{
 			z-index: 999;
 		}
 		.picture img{
-			width:100%;
+			width:100%;+
+
 		}
 @media screen and (max-width:760px){
 	.picture{
