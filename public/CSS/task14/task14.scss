@@ -59,89 +59,81 @@ body{
   }
 }
 
+.menu{
+  padding-left:.5rem;
+  padding-right:1.35rem;
+  background-color:#29b078;
+  font-size: .13rem;
+}
+.navbar{
+  background-color:#29b078;
+  border:none;
+  margin:0;
+}
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  text-align: center;
+}
+.navbar-nav {
+  margin: 0;
+  margin-right: -1rem;
+}
+.collapse{
+  padding: 0;
+}
+.container-fluid{
+  padding:0;
+}
+.navbar-default .navbar-toggle {
+  border:none;
+  float: right;
+  padding-right:0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color:white;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color:unset;
+}
 .nav{
-  @include fixedpad;
-  @include padding(.1rem,.1rem);
-  font-size: .15rem;
-  background-color:$green;
-  .link{
-    float:left;
-    img{
-      display: inline-block;
-      height:.3rem;
-    }
-  }
-  .navbar{
-    .nav-btn{
-      display: none;
-      float:right;
-      @include size(.2rem,.02rem);
-      border-top: .02rem solid white;
-      border-bottom: .02rem solid white;
-      background-color: white;
-      padding: .05rem 0;
-      background-clip: content-box;
-    }
-    .nav-list{
-      float:right;
-      padding:0;
-      margin:0;
-      li{
-        position:relative;
-        padding-left:.3rem;
-        &:hover .nav-hover{
-          display: block;
-        }
-        .nav-link{
-          color:$white;
-          &:active{
-            color:$white;
-          }
-          &:visited{
-            color:$white;
-          }
-        }
-        .nav-hover{
-          display: none;
-          position: absolute;
-          top:.34rem;
-          left:.15rem;
-          @include size(.5rem,.03rem);
-          background-color: $white;
-        }
-      }
-    }
-  }
+  width: auto;
+  border:none;
+  float:right;
 }
+.nav li:hover{
+  color: white;
+  border-bottom: 3px solid white;
+}
+.nav li:hover a{
+  margin-bottom: -3px;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: white;
+  background-color: transparent;
+}
+
 @media screen and (max-width:768px){
-  .nav{
-    .navbar{
-      .nav-btn{
-        display: block;
-      }
-      .nav-list{
-        display: block;
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        .li{
-          display:block;
-          width:100%;
-          text-align: center;
-          .nav-link{
-            display: block;
-          }
-        }
-        .nav-hover{
-          width:100%;
-        }
-      }
-    }
+  .menu{
+    padding-right:.5rem;
+  }
+  .nav {
+    float: none;
+  }
+  .navbar-nav {
+    margin: 0;
   }
 }
+.picture1{
+  float:left;
+  height: .4rem;
+  padding-top: .1rem;
+  vertical-align: middle;
+}
+
+
 .footer{
   @include fixedpad;
+  padding-bottom: .3rem;
   color:$white;
   background-color:$green;
   .footer_box{
@@ -480,9 +472,12 @@ h5{
         text-decoration: none;
         color:$deepgrey;
       }
-      &:hover{
+      &:hover a{
         border-bottom:1px solid $green;
       }
+      &:hover a{
+      margin-bottom:0.04rem;
+    }
     }
   }
 }
@@ -671,6 +666,7 @@ h5{
   justify-content: space-between;
   padding-left:.5rem;
   padding-right:.5rem;
+  padding-bottom: .2rem;
   .empty{
     width:30%;
     height:1px;
@@ -707,8 +703,6 @@ h5{
       display: flex;
       p{
         width:50%;
-        height: .2rem;
-        line-height: .2rem;
         padding-left: .1rem;
         @include padding(.1rem,.1rem);
         margin-top:0;
