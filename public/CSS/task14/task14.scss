@@ -415,15 +415,14 @@ h5{
   .co-operative{
     display: inline-block;
     width:20%;
-    height:1.7rem;
-    line-height: 1.7rem;
+    height:2rem;
+    line-height: 2rem;
     margin:0;
     box-sizing: border-box;
     text-align: center;
     background-color: $white;
+    overflow: hidden;
     img{
-      width:60%;
-      height:1.2rem;
       vertical-align: middle;
     }
     &:hover{
@@ -434,15 +433,22 @@ h5{
     }
   }
 }
+@media screen and (max-width: 1100px){
+  .page1-part5{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .co-operative{
+      width:48%;
+      margin-top:.2rem;
+    }
+  }
+}
 @media screen and (max-width: 500px){
   .page1-part5{
     .co-operative{
       width:100%;
       margin-top:.2rem;
-
-      img{
-        width:50%;
-      }
     }
   }
 }
