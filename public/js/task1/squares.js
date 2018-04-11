@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2018/4/10.
  */
-var text;
 function numrandom(){
             var blocks=Array(0,1,2,3,4,5,6,7,8);
             var newblock=new Array();
@@ -37,6 +36,7 @@ function circle(){
 
 var text;
 function starting(){
+    clearInterval(text);
     text=setInterval("circle()",1000);
 }
 
