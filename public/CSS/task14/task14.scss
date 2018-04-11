@@ -191,7 +191,6 @@ body{
       float:none;
     }
   }
-
 }
 @media screen and (max-width:500px){
   .header_left{
@@ -790,7 +789,7 @@ h5{
       padding:.3rem .2rem 0 .2rem;
       transform: translateX(-100%);
       transition: transform 1s;
-      .extrp-title{
+      .extro-title{
         width: 100%;
         height: .2rem;
         line-height: .2rem;
@@ -799,9 +798,10 @@ h5{
       .extro-content{
         text-indent: 2em;
       }
-      &:hover .extro{
-        transform: translateX(0);
-      }
+
+    }
+    &:hover .extro{
+      transform: translateX(0);
     }
   }
 }
