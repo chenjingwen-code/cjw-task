@@ -4,6 +4,11 @@ function change(){
     var location=document.getElementById("shownum");
     location.value=num.value;
 }
+function synchro(){
+    var num=document.getElementById("range");
+    var location=document.getElementById("shownum");
+    num.value=location.value;
+}
 function addnum(){
     var num=document.getElementById("range");
     num.value=++num.value;
