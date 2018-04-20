@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet"  href="setup.css">
-    <script src="setup.js"></script>
 </head>
 <body>
 <header><img src="./img/9.png"><span>参考设置</span><img class="iconright" src="./img/10.png"></header>
@@ -22,7 +21,8 @@
         <input type="text" maxlength="8" placeholder="卧底词组">
     </div>
     <div class="playernum">
-        <div class="number">玩家人数<input id="shownum" oninput="synchro()" type="tel" min="4" max="18" maxlength="2">人</div>
+        <div class="number">玩家人数<input id="shownum" oninput="synchro()
+            " type="tel" min="6" max="18" maxlength="2" value="6">人</div>
         <div class="slide">
             <input id="subbtn" onclick="subnum()" type="button" value="—">
             <input id="range" oninput="change()" type="range" min="6" max="18" step:"1" value="6">
@@ -32,5 +32,8 @@
     </div>
     <button class="deal" onclick="deal()">去发牌</button>
 </div>
+    
+
+<script src="setup.js"></script>
 </body>  
 </html>

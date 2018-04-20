@@ -53,12 +53,13 @@ header .iconright {
 }
 
 .main .match .match_right #write {
-  min-height: 10rem;
+  height: 10rem;
   margin-top: 1rem;
   border-bottom: 1px solid #d9d9d9;
   font-size: 0.8rem;
   background-color: #fbfbfb;
   text-align: center;
+  overflow-y: auto;
 }
 
 .main .match .match_right button {

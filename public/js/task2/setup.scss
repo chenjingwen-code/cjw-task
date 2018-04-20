@@ -68,12 +68,13 @@ header{
             flex:1;
             background-color: $lightgrey;
             #write{    
-                min-height:10rem;
+                height:10rem;
                 margin-top: 1rem;
                 border-bottom:1px solid $deepgrey;
                 font-size: 0.8rem;
                 background-color: $lightgrey;
                 text-align: center;
+                overflow-y: auto;
             }
             button{
                 width:100%;
