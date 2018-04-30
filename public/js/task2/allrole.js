@@ -6,7 +6,7 @@ console.log(objorder);
 console.log(objrole);
 //给指定标签创建子标签
 for(i=0;i<objrole.length;i++){
-    var  parent=document.getElementById("squares")
+    var  parent=document.getElementById("squares");
     var  div=document.createElement("div");
     parent.appendChild(div);
     div.className="square";
@@ -16,11 +16,11 @@ for(i=0;i<objrole.length;i++){
     parentDiv[i].appendChild(upper);
     parentDiv[i].appendChild(lower);
     upper.className="upper";
-    lower.className="lower";
+    lower.className="lower"; 
     document.getElementsByClassName("upper")[i].innerHTML=objrole[i];
     document.getElementsByClassName("lower")[i].innerHTML=objorder[i]+"号";
 }
 //点击事件函数，跳转到下一页面，开始游戏
 function jumurl(){
-    window.location.href="#";
+    window.location.href="diary.html";
 }
