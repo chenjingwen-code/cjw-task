@@ -1,0 +1,28 @@
+<div class="bgimg">
+    <div class="loginbox" ng-controller="loginCtrl">
+        <span>后台登录</span>
+        <form name="loginForm">
+        <div class="username">
+            <img src="../img/2.png">
+            <input name="username" ng-model="name" type="text" placeholder="请输入用户名"
+            ng-minlength=5 ng-maxlength=10 required>
+        </div>  
+        <div class="password">
+            <img src="../img/3.png">
+            <input name="password" ng-model="password" type="password" placeholder="请输入密码"
+            ng-minlength=5 ng-maxlength=10 required>
+        </div>
+        <div class="error">
+            <span ng-show="loginForm.username.$dirty && loginForm.username.$error.required">用户名不能为空</span>
+            <span ng-show="loginForm.username.$error.minlength">用户名长度不能少于5</span>
+            <span ng-show="loginForm.username.$error.maxlength">用户名长度不能大于10</span>
+            <span ng-show="loginForm.password.$dirty && loginForm.password.$error.required">密码不能为空</span>
+            <span ng-show="loginForm.password.$error.minlength">密码长度不能小于5</span>
+            <span ng-show="loginForm.password.$error.maxlength">密码长度不能小于10</span>
+        </div>
+        </form>  
+        <div class="errormessage" ng-bind-html="errormessage | to_trusted"></div>
+        <button ng-click="login()" type="button">登录</button>
+    </div>
+</div>
+ 

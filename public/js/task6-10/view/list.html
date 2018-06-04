@@ -1,0 +1,112 @@
+
+
+    <div ng-controller="listCtrl" style="padding:20px;">
+    <div class="options">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 flexbox">
+                    <span class="option">发布时间</span>
+                    <p class="input-group time">
+                        <input type="text" class="form-control" uib-datepicker-popup 
+                        ng-model="dtStart" is-open="popup1.opened" 
+                        datepicker-options="startDateOptions" 
+                        ng-required="true" close-text="Close"
+                        ng-change="startDate(dtStart)" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" 
+                            ng-click="open1()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-12 flexbox">
+                    <span class="option"><span style="opacity:0;">—</span>—<span style="opacity:0;">——</span></span>
+                    <p class="input-group time">
+                        <input type="text" class="form-control" uib-datepicker-popup 
+                        ng-model="dtEnd" is-open="popup2.opened" datepicker-options="endDateOptions" 
+                        ng-required="true" close-text="Close" 
+                        ng-change="endDate(dtEnd)"/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open2()">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </button>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-12 flexbox">
+                    <span class="option">类<span style="opacity:0;">类型</span>型</span>
+                    <select ng-model="styleName" ng-options="key as value for (key, value) in styles" >
+                            <!-- <option value="" select hidden >全部</option> -->
+                            <option  value="">全部</option>
+                        </select>
+                </div>
+                <div class="col-md-4 col-sm-12 flexbox flexbox-single">
+                    <span class="option">状<span style="opacity:0;">状态</span>态</span>
+                    <select ng-model="stateName" ng-options="y.value as y.text for y in states" >
+                        <option value="" select hidden >全部</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="clear" ng-click="empty()">清空</button>
+            <button class="search" ng-click="search(dtStart,dtEnd,styleName,stateName)" >搜索</button>
+        </div>
+    </div>
+    <div class="list">
+        <div class="list-title">
+            <span>Article列表</span>
+            <button  ng-click="addlist()">+新增</button>
+        </div>
+        <div class="list-body" >
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>图片</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>发布时间</th>
+                        <th>修改时间</th>
+                        <th>发布者</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="x in list">
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td><img src="{{x.img}}"></td>
+                        <td>{{x.title}}</td>
+                        <td>{{x.type | type}}</td>
+                        <td>
+                            <div style="text-align:center;">{{x.createAt|date:'yyyy-MM-dd'}}</div>
+                            <div>{{x.createAt|date:'HH:mm:ss'}}</div>
+                        </td>
+                        <td>
+                            <div>{{x.updateAt|date:'yyyy-MM-dd'}}</div>
+                            <div>{{x.updateAt|date:'HH:mm:ss'}}</div>
+                        </td>
+                        <td>{{x.author}}</td>
+                        <td>{{x.status | state}}</td>
+                        <td>
+                            <button ng-click="statusToggle(x.status,x.id)">{{x.status | toggle}}</button>
+                            <button ng-click="edit(x.id)">编辑</button>
+                            <button ng-click="delete($index,list)">删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="paginationss">
+        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" 
+        class="pagination-sm" previous-text="&lsaquo;"next-text="&rsaquo;" first-text="&laquo;" 
+        last-text="&raquo;"max-size="maxSize" boundary-links="true" force-ellipses="true"
+        ng-change="pageChanged(currentPage,dtStart,dtEnd,styleName,stateName)"></ul> 
+    </div>
+    
+</div>    
+</div>
+

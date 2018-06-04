@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo</title>
+</head>
+<body ng-app="app" ng-controller="demoCtrl">
+              
+    <!-- <div>{{1430899328358 | date:'yyyy-MM-dd'}}</div> -->
+    <!-- <div>{{1430899328358 | date:'yyyy-MM-dd' | date:'hh:mm:ss'}}</div> -->
+    <!-- <div>{{1430899328358 | date:'yyyy-MM-dd' | date :'yyyy-MM-dd hh:mm:ss' | filter:4}}</div>  -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="friend in friends | filter:{name:'i'}">
+                <td>{{friend.name}}</td>
+                <td>{{friend.phone}}</td>
+            </tr>
+        </tbody>
+    </table>   
+</body>
+
+
+<script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+<script>
+
+    var app=angular.module('app',[]);
+    app.constant('myConstant',{"value1":"hello world"});    
+    app.value('myValue',{"value1":"hello world"});    
+    app.controller('demoCtrl',['$scope',function($scope){
+        $scope.friends = [
+            {name: 'John', phone: '44555-1276'},
+            {name: 'Annie', phone: '800-BIG-MARY'},
+            {name: 'Mike', phone: '11555-4321'},
+            {name: 'Adam', phone: '33555-5678'},
+            {name: 'David', phone: '387555-8765'},
+            {name: 'Mikay', phone: '555-5678'}];
+    }]);
+
+    // app.config(function(myConstant){  
+    // }); 
+    // app.config(function(myValue){  
+    // }); 
+</script>
+</html>
