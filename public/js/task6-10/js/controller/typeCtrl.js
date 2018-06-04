@@ -39,22 +39,23 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
     $scope.retreat=function(){
         $state.go('backstage.list');
     };
-    //获取富文本编辑器jquery写法
-    $("#wEditor").on('mouseout',function(){
-        editContent=editor.txt.html();
-        console.log(editContent);
-    });
+    // //获取富文本编辑器jquery写法
+    // $("#wEditor").on('mouseout',function(){
+    //     editContent=editor.txt.html();
+    //     console.log(editContent);
+    // });
 
-    //立即上线
+    //立即上线 新增
     $scope.param={};
     if(isNaN(parseInt($stateParams.id))==true){
         $scope.ttitle="新增Article";
         $scope.online=function(param,imageSrc){
             $scope.param.img=imageSrc;
             $scope.param.status=1;
-            $scope.param.content=$scope.html;
+            $scope.param.content= editor.txt.html();
             console.log($scope.editContent);
             console.log($scope.param);
+            
             $http({
                 method:"POST",
                 url:"/carrots-admin-ajax/a/u/article",
@@ -78,11 +79,12 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
                 }  
             });  
         };
-        //存为草稿
+        //存为草稿 新增
         $scope.draft=function(param,imageSrc){
             $scope.param.img=$scope.imageSrc;
             $scope.param.status=2;
-            $scope.param.content=$scope.html;
+            $scope.param.content= editor.txt.html();
+            console.log($scope.param);
             $http({//发送请求获取数据
                 method:"POST",
                 url:"/carrots-admin-ajax/a/u/article",
@@ -108,6 +110,7 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
         };
     }
     else{
+        //编辑 
         $scope.ttitle="编辑Article";
         console.log($stateParams.id);
         $http({
@@ -121,10 +124,11 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
                 editor.txt.html($scope.param.content);
             }
         });
+        //立即上线
         $scope.online=function(param,imageSrc){
             $scope.param.img=imageSrc;
             $scope.param.status=1;
-            $scope.param.content=$scope.html;
+            $scope.param.content= editor.txt.html();
             $http({
                 method:"PUT",
                 url:'/carrots-admin-ajax/a/u/article/'+$stateParams.id,
@@ -148,10 +152,12 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
                 }  
             });     
         };
+
+        //存为草稿
         $scope.draft=function(param,imageSrc){
             $scope.param.img=imageSrc;
             $scope.param.status=2;
-            $scope.param.content=$scope.html;
+            $scope.param.content= editor.txt.html();
             $http({
                 method:"PUT",
                 url:'/carrots-admin-ajax/a/u/article/'+$stateParams.id,
@@ -175,10 +181,6 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
                 }            
             });    
         };
-    }
-    
-
-
-    
+    }    
 });
 

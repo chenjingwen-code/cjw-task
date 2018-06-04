@@ -76,9 +76,9 @@
     color: #fff;
     background-color:#337ab7;
   }
-  .table .table-row img{
+  .table .table-row .preview{
     display: block;
-    width:100%;
+    max-width:100%;
     padding:10px 80px;
   }
  #upload-file {
@@ -137,6 +137,9 @@
     -webkit-transition: width .6s ease;
     -o-transition: width .6s ease;
     transition: width .6s ease;
+}
+.bootbox{
+    z-index:10001;
 }
 @media screen and (max-width: 768px){
     .table .table-row input{

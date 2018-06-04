@@ -37,15 +37,15 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
             endAt: $stateParams.endAt
         }
     }).then(function (response) {
+        $scope.dtEnd = new Date($filter('date')($stateParams.endAt-86399999, 'yyyy-MM-dd'));
         $scope.list = response.data.data.articleList;
         num = response.data.data.total;
         $scope.$watch('num', function (newValue, oldValue) { //获取信息总数，确定分页
             $scope.totalItems = num;
         });
         //new Date()必须加，否则时间显示不出来，$filter把时间戳过滤为标准时间
+       
         $scope.dtStart = new Date($filter('date')($stateParams.startAt, 'yyyy-MM-dd'));
-        $scope.dtEnd = new Date($filter('date')($stateParams.endAt, 'yyyy-MM-dd'));
-
         $scope.styleName = $stateParams.type;
         if ($stateParams.status == null) { //status为空的时候不做转换，否则value值变为？,没有该选项
             $scope.stateName = undefined;
@@ -106,11 +106,10 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
 
     //开始时间设置条件
     $scope.startDateOptions = {
-        // dateDisabled: disabled,
         formatYear: 'yy',
-        maxDate: $scope.dtEnd, //最大时间不超过当天
         startingDay: 1
     };
+    console.log('0:'+$scope.startDateOptions.maxDate);
     //结束时间设置条件
     $scope.endDateOptions = {
         formatYear: 'yy',
@@ -119,17 +118,22 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
         startingDay: 1
     };
     //结束时间没有选时，自动给结束时间赋值为当天
-    if ($scope.dtEnd == undefined) {
-        $scope.dtEnd = new Date();
-    } else {
-        $scope.startDateOptions.maxDate = $scope.dtEnd;
-    }
+
     $scope.$watch('dtStart', function (newValue, oldValue) {
-        $scope.endDateOptions.minDate = newValue; //监视开始时间的变化
+        $scope.endDateOptions.minDate = newValue;
+        //监视开始时间的变化
     });
     $scope.$watch('dtEnd', function (newValue, oldValue) {
-        $scope.startDateOptions.maxDate = newValue; //监视结束时间的变化
+         //监视结束时间的变化
+        if(newValue==undefined){
+            $scope.startDateOptions.maxDate = new Date();
+        }
+        else{
+            $scope.startDateOptions.maxDate = newValue;
+        }
+        console.log('5:'+$scope.startDateOptions.maxDate);
     });
+
 
     //搜索按钮
     $scope.search = function (dtStart, dtEnd, styleName, stateName) {
@@ -142,7 +146,7 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
             $scope.dtEnd = undefined;
         }
         else{
-            $scope.dtEnd=$scope.dtEnd+86399999;
+            $scope.dtEnd=$scope.dtEnd;
         }
 
         console.log("dtStart:" + dtStart);
@@ -158,7 +162,7 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
             type: $scope.styleName,
             status: $scope.stateName,
             startAt: $scope.dtStart,
-            endAt: $scope.dtEnd
+            endAt: $scope.dtEnd+86399999
         });
     };
     //清空按钮
@@ -169,11 +173,12 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
             startAt: undefined,
             endAt: undefined,
             page: null
-        });
-        $scope.styleName = ''; //给类性值，状态值，开始和结束时间赋空值
+        });      
+        $scope.styleName = undefined; //给类型值，状态值，开始和结束时间赋空值
         $scope.stateName = undefined;
         $scope.dtStart = undefined;
         $scope.dtEnd = undefined;
+
     };
     //上下线切换
     $scope.statusToggle = function (status, id) {
@@ -234,10 +239,12 @@ app.controller("listCtrl", function ($scope, $state, $http, $log, $stateParams, 
                 if (result) {
                     $http({
                         method: 'DELETE',
-                        url: '/carrots-admin-ajax/a/u/article/status' + $scope.list[index].id
+                        url: '/carrots-admin-ajax/a/u/article/' + $scope.list[index].id
                     }).then(function (response) {
                         console.log(response);
-                        $state.reload('backstage.list');
+                        if(response.data.code==0){
+                            $state.reload('backstage.list');
+                        }                       
                     });
                 }
             },
