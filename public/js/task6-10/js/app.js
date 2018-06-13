@@ -5,7 +5,8 @@ var app=angular.module("app",
         'ngAnimate',
         'ngSanitize',
         'ui.bootstrap',
-        'angularFileUpload'
+        'angularFileUpload',
+        'ngMessages'
     ]);
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise("login");
@@ -29,7 +30,8 @@ app.config(function($stateProvider,$urlRouterProvider){
             load:['$ocLazyLoad',function($ocLazyLoad){
                 return $ocLazyLoad.load(
                    {files:['../css/backstage.css',
-                    '../js/controller/pageCtrl.js']}
+                    '../js/controller/pageCtrl.js',
+                ]}
                 );
             }]
         }
@@ -58,9 +60,17 @@ app.config(function($stateProvider,$urlRouterProvider){
             load:['$ocLazyLoad',function($ocLazyLoad){
                 return $ocLazyLoad.load(
                     {files:['../css/detail.css',
-                    '../js/controller/typeCtrl.js']}
+                    '../js/controller/typeCtrl.js',
+                    '../js/constant/constant.js'
+                ]}
                 );
             }]
         }
     });
 });
+
+app.config(httpConfig);
+function httpConfig($httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+    $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+}

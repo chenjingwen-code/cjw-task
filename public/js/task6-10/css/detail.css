@@ -10,11 +10,13 @@
     
 }
 .table .table-row{
+    display: flex;
     width:100%;
     padding:10px 50px;
 }
 .table .table-row .table-row-name{
-    margin-right:20px;
+    display: inline-block;
+    width:80px;
     font-weight:bold
 }
 .table .table-row input{
@@ -49,7 +51,7 @@
 .table .table-footer{
     display: flex;
     justify-content: space-between;
-    padding:20px 127px;
+    padding:20px 50px 20px 127px;
 
 
 }
@@ -58,7 +60,7 @@
     border:none;
     border-radius: 5px;
     color:#fff;
-    background-color:#96d196;
+    background-color:#5cb85c;
     outline:none;
 }
 .table .table-footer .table-footer-right button{
@@ -81,6 +83,12 @@
     max-width:100%;
     padding:10px 80px;
   }
+  .table .table-row .inputbox{
+      flex:1
+  }
+  .table .table-row-special{
+      display: block;
+  }
  #upload-file {
     display: none;
     margin-top: 10px;
@@ -102,6 +110,7 @@
   .table .table-row table{
       width:100%;
       margin-left:80px;
+      box-sizing:border-box;
   }
   .table .table-row table thead tr th{
       padding:10px 10px;
@@ -138,10 +147,18 @@
     -o-transition: width .6s ease;
     transition: width .6s ease;
 }
-.bootbox{
-    z-index:10001;
+.table .error{
+    padding-left:130px;
+    color:red;
 }
 @media screen and (max-width: 768px){
+    .table .error{
+        padding-left:50px;
+
+    }
+    .table .table-row{
+        display: block;
+    }
     .table .table-row input{
         display: block;
         width: 100%;

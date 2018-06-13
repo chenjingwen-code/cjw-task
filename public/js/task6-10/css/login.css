@@ -13,7 +13,7 @@ body{
     text-align: center;
 }
 .loginbox span{
-    font-size: 1.5rem;
+    font-size: 2rem;
     color:#29bde0;
 }
 .username,.password{
@@ -45,6 +45,10 @@ body{
     border:none;
     background-color: rgba(0,0,0,0);
     outline:none;
+}
+.error{
+    height:1.2rem;
+    color:red;
 }
 .errormessage{
     height:1rem;

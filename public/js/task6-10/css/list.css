@@ -1,6 +1,6 @@
 
 .options{
-    margin:10px;
+    margin-bottom:20px;
     padding-top:10px;
     border:1px solid #f1f1f1;
 }
@@ -16,10 +16,8 @@
     margin-bottom:10px;
 
 }
-.options .container .row .flexbox-single{
-    width:100%;
-}
 .options .container .row .flexbox .option{
+    width:80px;
     margin:10px;
 }
 .options .container .row .flexbox .time{
@@ -35,6 +33,7 @@
     height:34px;
 }
 .options .container .row .flexbox select{
+    width:300px;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
@@ -45,11 +44,11 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }   
-.options .btn{
+.options .botton{
     display: flex;
     flex-direction:row-reverse;
 }
-.options .btn .clear{
+.options .botton .clear{
     margin:5px;
     padding:5px;
     border:none;
@@ -57,16 +56,15 @@
     color:#fff;
     background-color: #d9534f;
 }
-.options .btn .search{
+.options .botton .search{
     margin:5px;
     padding:5px;
     border:none;
     border-radius:3px;
     color:#fff;
     background-color:#5cb85c;
-}
+} 
 .list{
-    margin:10px;
     border:1px solid #f1f1f1;
 }
 .list-title{
@@ -132,7 +130,7 @@ table tbody tr td button{
         display: block;
     }
 }
-@media screen and (max-width:768px){
+ @media screen and (max-width:768px){
     .options .container .row .flexbox{
         display: block;
     }
@@ -155,4 +153,4 @@ table tbody tr td button{
     .options .container .row .flexbox .time{
         width:100%;
     }
-}
+} 

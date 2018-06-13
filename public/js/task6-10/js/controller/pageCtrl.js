@@ -1,5 +1,5 @@
 var app=angular.module('app');
-    app.controller('pageCtrl',function ($scope,$state,$http) {
+    app.controller('pageCtrl',function ($scope,$state,$http,aaa) {
         a=sessionStorage.a;
         console.log(a);
         if(a!=1){
@@ -16,19 +16,9 @@ var app=angular.module('app');
                     sessionStorage.clear();
                     $state.go('login');
                 }
-            });
+            });   
         };
-        $scope.aaa=[{
-            name:'信息管理',
-            children:['公司信息','职位信息']
-        },{
-            name:'Article管理',
-            children:['Artice列表','文章管理','内容管理']
-        },{
-            name:'用户管理',
-            children:['用户管理']
-        }
-    ];
+        $scope.aaa=aaa;
         $scope.go=function(pIndex){
           $scope.cIndex=pIndex;
         };
