@@ -1,5 +1,5 @@
 app=angular.module('app');
-app.controller('typeCtrl',function($scope,$rootscope,FileUploader,$state,$http,$stateParams,types,industrys,articleOper){
+app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams,types,industrys,articleOper){
     $scope.types=types;
     $scope.industrys=industrys;
     //图片上传
@@ -74,8 +74,10 @@ app.controller('typeCtrl',function($scope,$rootscope,FileUploader,$state,$http,$
         articleOper.getArticle($stateParams.id)//获取单个article
         .then(function(response){
             if(response.data.code==0){
+                console.log(response);
                 $scope.param=response.data.data.article;
                 $scope.imageSrc=response.data.data.article.img;
+                editor.txt.html($scope.param.content);
             }           
         });
         $scope.submit=function(param,imageSrc,value){
