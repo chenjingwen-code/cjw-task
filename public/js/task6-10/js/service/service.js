@@ -18,21 +18,10 @@ app.factory('articleOper', function ($http, pathProject) {
         //新增Article
         addList: function (params) {
             return $http.post(pathProject.addArticle_url, $.param(params));
-
-            // return $http({//发送请求获取数据
-            //     method:"POST",
-            //     url:"/carrots-admin-ajax/a/u/article",
-            //     params:params
-            // });
         },
         //编辑Article
         editList: function (id, params) {
             return $http.put(pathProject.editArticle_url(id), $.param(params));
-            // return $http({
-            //     method:"PUT",
-            //     url:'/carrots-admin-ajax/a/u/article/'+id,
-            //     params:params
-            // });
         },
         //上下线切换
         toggleList: function (id, status) {

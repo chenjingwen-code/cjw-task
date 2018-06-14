@@ -1,5 +1,5 @@
 app=angular.module('app');
-app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams,types,industrys,articleOper){
+app.controller('typeCtrl',function($scope,$rootscope,FileUploader,$state,$http,$stateParams,types,industrys,articleOper){
     $scope.types=types;
     $scope.industrys=industrys;
     //图片上传
@@ -8,7 +8,6 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
     uploader.queueLimit=1;//限制上传文件个数
     uploader.queue=[];
     uploader.onSuccessItem = function(data,response,fileItem,$stateParams) {
-        console.log(response.data);
         $scope.imageSrc=response.data.url;
       };
     //点击删除，图片预览消失
@@ -41,20 +40,18 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
     //取消键，后退至list页面
     $scope.retreat=function(){
         $state.go('backstage.list');
-    };
-    //立即上线 新增
-    $scope.param={};
-    if(isNaN(parseInt($stateParams.id))==true){
+    };    
+    $scope.param={}; 
+    if(isNaN(parseInt($stateParams.id))){
+         //新增
         $scope.ttitle="新增Article";
-        $scope.online=function(param,imageSrc){
+        $scope.submit=function(param,imageSrc,value){
             $scope.param.img=imageSrc;
-            $scope.param.status=1;
-            console.log($scope.param);
+            $scope.param.status=value;//value=1 上线  value=2 草稿
+            $scope.param.content=editor.txt.html();
             articleOper.addList($scope.param)//新增请求
             .then(function(response){
-                console.log(response);
-                if(response.data.code==0){                   
-                    bootbox.setLocale("zh_CN");  
+                if(response.data.code==0){                    
                     bootbox.alert({  
                         buttons: {  
                            ok: {  
@@ -70,53 +67,24 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
                 }  
             });  
         };
-        //存为草稿 新增
-        $scope.draft=function(param,imageSrc){
-            $scope.param.img=$scope.imageSrc;
-            $scope.param.status=2;
-            console.log($scope.param);
-            articleOper.addList($scope.param)//新增请求
-            .then(function(response){
-                console.log(response);
-                if(response.data.code==0){
-                    bootbox.setLocale("zh_CN");  
-                    bootbox.alert({  
-                        buttons: {  
-                           ok: {  
-                                label: '确定',  
-                                className: 'btn-myStyle'  
-                            }  
-                        },  
-                        message: '新增成功',  
-                        callback: function() {  
-                            $state.go('backstage.list');
-                        } 
-                    });  
-                }
-            });
-        };
     }
     else{
         //编辑 
         $scope.ttitle="编辑Article";
-        console.log($stateParams.id);
         articleOper.getArticle($stateParams.id)//获取单个article
         .then(function(response){
-            console.log(response);
             if(response.data.code==0){
                 $scope.param=response.data.data.article;
                 $scope.imageSrc=response.data.data.article.img;
             }           
         });
-        //立即上线
-        $scope.online=function(param,imageSrc){
+        $scope.submit=function(param,imageSrc,value){
             $scope.param.img=imageSrc;
-            $scope.param.status=1;
+            $scope.param.status=value;//value=1 上线  value=2 草稿
+            $scope.param.content=editor.txt.html();
             articleOper.editList($stateParams.id,$scope.param)//编辑请求
             .then(function(response){
-                console.log(response);
-                if(response.data.code==0){
-                    bootbox.setLocale("zh_CN");  
+                if(response.data.code==0){                    
                     bootbox.alert({  
                         buttons: {  
                            ok: {  
@@ -131,32 +99,6 @@ app.controller('typeCtrl',function($scope,FileUploader,$state,$http,$stateParams
                     });  
                 }  
             });     
-        };
-
-        //存为草稿
-        $scope.draft=function(param,imageSrc){
-            $scope.param.img=imageSrc;
-            $scope.param.status=2;
-            console.log($scope.param);
-            articleOper.editList($stateParams.id,$scope.param)//编辑请求
-            .then(function(response){
-                console.log(response);
-                if(response.data.code==0){
-                    bootbox.setLocale("zh_CN");  
-                    bootbox.alert({  
-                        buttons: {  
-                           ok: {  
-                                label: '确定',  
-                                className: 'btn-myStyle'  
-                            }  
-                        },  
-                        message: '编辑成功',  
-                        callback: function() {  
-                            $state.go('backstage.list');
-                        } 
-                    });  
-                }            
-            });    
         };
     }    
 });

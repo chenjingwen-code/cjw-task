@@ -84,8 +84,8 @@
         </div>
         <div class="table-footer">
             <div class="table-footer-left">
-                <button class="btn btn-default btn-success" ng-click="online(param,imageSrc)" ng-disabled="!myForm.$valid||imageSrc==false||imageSrc==undefined" disabled="disabled">立即上线</button>
-                <button class="btn btn-default btn-success"ng-click="draft(param,imageSrc)" ng-disabled="!myForm.$valid||imageSrc==undefined||imageSrc==false" disabled="disabled">存为草稿</button>
+                <button class="btn btn-default btn-success" ng-click="submit(param,imageSrc,1)" ng-disabled="!myForm.$valid||imageSrc==false||imageSrc==undefined" disabled="disabled">立即上线</button>
+                <button class="btn btn-default btn-success"ng-click="submit(param,imageSrc,2)" ng-disabled="!myForm.$valid||imageSrc==undefined||imageSrc==false" disabled="disabled">存为草稿</button>
             </div>
             <div class="table-footer-right">
                 <button ng-click="retreat()">取消</button>
