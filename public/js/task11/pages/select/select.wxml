@@ -1,0 +1,49 @@
+<view class="title">试试什么职业适合你</view>
+<view class='section'>
+  <picker value="{{eduIndex}}" range="{{eduArray}}"                                     bindchange='eduChange' range-key="{{'name'}}">
+    <view class='picker'>
+      学  历：{{eduArray[eduIndex].name}}
+    </view>
+  </picker>
+</view>
+<view  class='section'>
+  <picker value="{{sexIndex}}" range="{{sexArray}}"                                 bindchange="sexChange">
+    <view>
+      性  别：{{sexArray[sexIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='section'>
+  <picker value="{{ageIndex}}" range="{{ageArray}}"
+          bindchange="ageChange">
+    <view>
+      年  龄：{{ageArray[ageIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='section'>
+  <picker value="{{baseIndex}}" range="{{baseArray}}"
+          bindchange='baseChange'>
+    <view>
+      基  础：{{baseArray[baseIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='section'>
+  <picker value="{{majorIndex}}" range="{{majorArray}}" 
+          bindchange='majorChange'>
+    <view>
+      专  业：{{majorArray[majorIndex]}}
+    </view>
+  </picker>
+</view>
+<view class='section'>
+  <picker value="loginIndex" range="{{logicArray}}"
+          bindchange='logicChange'>
+    <view>
+      逻  辑：{{logicArray[logicIndex]}}
+    </view>
+  </picker>
+</view>
+<button class="btn" bindtap='clickMe'>选好了，点击查看</button>
+

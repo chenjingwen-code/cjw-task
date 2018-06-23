@@ -17,11 +17,8 @@ document.getElementById("btn").onclick=function(){
                 if(data.code==0){
                     window.location.href="../task2/setup.html";
                 }
-                else if(data.code==-5003){
-                    document.getElementById("errormessage").innerHTML="用户名错误";
-                }
-                else if(data.code==-5004){
-                    document.getElementById("errormessage").innerHTML="密码错误";
+                else{
+                    document.getElementById("errormessage").innerHTML=data.message;
                 }
             }
             else{

@@ -3,11 +3,12 @@ $("#btn").on('click',function(){
         url:'/carrots-admin-ajax/a/login',
         type:'POST',
         async:true,
+        contentTypt:'application/json',
+        dataType:"json",
         data:{
             name:$("#username").val(),
             pwd:$("#password").val()
-        },
-        dataType:"json",
+        },       
         success:function(obj){
             console.log($("#username").val());
             console.log($("#password").val());
@@ -16,11 +17,8 @@ $("#btn").on('click',function(){
             if(obj.code==0){
                 window.location.href="../task2/setup.html";
             }
-            else if(obj.code==-5003){
-                $("#errormessage").text("用户名错误");
-            }
-            else if(obj.code==-5004){
-                $("#errormessage").text("密码错误");
+            else{
+                $("#errormessage").text(obj.message);
             }
         }     
     });
