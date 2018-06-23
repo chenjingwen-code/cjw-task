@@ -1,0 +1,25 @@
+$("#btn").on('click',function(){
+    $.ajax({
+        url:'/carrots-admin-ajax/a/login',
+        type:'POST',
+        async:true,
+        contentTypt:'application/json',
+        dataType:"json",
+        data:{
+            name:$("#username").val(),
+            pwd:$("#password").val()
+        },       
+        success:function(obj){
+            console.log($("#username").val());
+            console.log($("#password").val());
+            console.log(obj);
+            console.log(obj.code);
+            if(obj.code==0){
+                window.location.href="../task2/setup.html";
+            }
+            else{
+                $("#errormessage").text(obj.message);
+            }
+        }     
+    });
+});
