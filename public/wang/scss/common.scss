@@ -1,0 +1,210 @@
+$blueColor: #266996;
+$greenColor: #169e93;
+$purpleColor:#ccbfcf;
+$whiteColor:#ede5dc;
+
+$headerColor:#f8dd9c;
+$text-color: #666666;
+$bodyBackground:#d2ebe9;
+$footer-color:#36807f;
+$sidebar-color:#1f9d92;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  background: $bodyBackground;;
+  overflow-x: hidden;
+}
+p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+}
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+
+header{
+  .nav1{
+    line-height: 84px;
+  }
+  a{
+    display: inline-block;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left:10px;
+    color: $blueColor !important;
+    &:hover{
+    color: $greenColor !important;
+    }
+  }
+  .navbar{
+    margin-bottom: 0;
+  }
+  .navbar-nav {
+    margin: 0 -15px;
+  }
+  .navbar-header{
+    line-height: 84px;
+    background: #ccbecf;
+  }
+  .navbar-toggle{
+    margin-top: 25px;
+  }
+  .nav{
+    background-color: #ccbecf;
+    text-align: center;
+  }
+}
+footer{
+  font-size: 1.5rem;
+  background-color: $footer-color;
+  .fl{
+    //text-align: center;
+    margin: 25px 0;
+    p{
+      //text-align: left;
+      margin: 10px;
+      color: #acbab9;
+    }
+    .bold{
+      color:white;
+      font-weight: bold;
+    }
+    .btn-danger{
+      background: #f18e93;
+      border: none;
+      outline: none;
+    }
+  }
+  .fr{
+    //text-align: center;
+    margin: 25px 0;
+    div{
+      display: inline-block;
+    }
+    p{
+      width: 90px;
+      white-space: pre-wrap;
+      color: #acbab9;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width:768px){
+ .logo{
+   margin-left:15px;
+ }
+}
+/*---右侧固定图标---*/
+.sidebarParent{
+  position: fixed;
+  top: 0;
+  right: 1vw;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.sidebarRight {
+  //position: relative;
+  //left: 70%;
+  display: flex;
+  flex-direction: column;
+  .circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8vw;
+    height: 8vw;
+    max-width: 60px;
+    max-height: 60px;
+    min-width: 40px;
+    min-height: 40px;
+    margin: 1rem 0;
+    border-radius: 50%;
+    background-color: $greenColor;
+    cursor: pointer;
+  }
+  .circle_logo{
+    width: 40%;
+
+  }
+}
+//:hover .sidebarRight{
+//  position: relative;
+//  left: 0;
+//}//隐藏
+
+.phoneService{
+  position: relative;
+  .phoneService_msg{
+    position: absolute;
+    left: -180px;//15.2rem
+    width: 168px;//14rem
+    padding: 12px;//1rem
+    background-color: #fff;
+    box-shadow: 0 0 1px #999999;
+    .triangle-right{
+      position: absolute;
+      right: -20px;//-2rem
+      width: 0;
+      height: 0;
+      border-top: .5rem solid transparent;
+      border-left: 1rem solid #fff;
+      border-bottom: .5rem solid transparent;
+    }
+  }
+
+}
+/*侧边栏hover效果*/
+:hover.qqService{
+  text-decoration: none;
+  .qqService_img{
+    display: none;
+  }
+  .qqService_text{
+    display: block;
+  }
+}
+:hover.phoneService{
+  .phoneService_img{
+    display: none;
+  }
+  .phoneService_text{
+    display: block;
+  }
+  .phoneService_msg{
+    display: block;
+    color: #8f949a;
+  }
+}
+:hover.toTop{
+  .toTop_img{
+    display: none;
+  }
+  .toTop_text{
+    display: block;
+  }
+}
+@media screen and (max-width: 768px){
+  .qqService_text{
+    span{
+      font-size: 10px;
+    }
+  }
+  .phoneService_text{
+    span{
+      font-size: 10px;
+    }
+  }
+  .toTop_text{
+    span{
+      font-size: 10px;
+    }
+  }
+}//手机端缩小侧边栏按钮的字体

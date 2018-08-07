@@ -1,0 +1,288 @@
+$greenColor: #169e93;
+$bodyBackground:#d2ebe9;
+$purpleColor:#ccbfcf;
+$blueColor: #266996;
+$text-color: #666666;
+body{
+  color: $text-color;
+}
+.fjac{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pm0{
+  padding: 0;
+  margin: 0;
+}
+.bold{
+  font-weight: bold;
+}
+.h4{
+  margin: 3rem 0;
+}
+.w90{
+  width: 90%;
+  margin: 0 auto;
+}
+.auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.item{
+  img{
+    width: 100%;
+  }
+}
+.pencil{
+  margin-left: -84px;
+}
+header{
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+main{
+  margin-top: 84px;
+}
+.carousel{
+  .glyphicon{
+    color: black !important;
+  }
+  .carousel-control{
+    background: transparent !important;
+  }
+  .carousel-indicators li{
+    border: 1px solid black;
+    border-radius: 0;
+    background: black;
+  }
+  .active{
+    background: white !important;
+  }
+}
+.title{
+  padding: 6rem 0;
+  position: relative;
+  display: inline-block;
+  .cn{
+    font-size: 2.2rem;
+    font-weight: 800;
+  }
+  .en{
+    color: $greenColor;
+  }
+}
+.content{
+  padding: 3rem 0 0 0;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  .game{
+    width: 80%;
+    max-width: 360px;
+    margin: 4rem auto;
+    padding-bottom: 2rem;
+    background: $bodyBackground;
+    border-radius: 15px;
+    img{
+      border-radius: 15px;
+    }
+  }
+  .scratchBox{
+    position: relative;
+    .scratch{
+      position:absolute;
+      left: 25%;
+      left:-webkit-calc(50% - 60px);
+      left:-moz-calc(50% - 60px);
+      left:calc(50% - 60px);
+      top: -10%;
+    }
+  }
+  h4{
+    padding: 1rem 0;
+    text-align: center;
+    color: $greenColor;
+    font-weight: 800;
+  }
+  h5{
+    margin-top: 3rem;
+    margin-bottom: 0;
+    text-align: center;
+    color: $greenColor;
+  }
+  .line{
+    width: 32px;
+    height: 2px;
+    margin-top: 15px;
+    background-color: #d2ebe9;
+  }
+}
+.own{
+  text-align: center;
+  .circle{
+    width: 120px;
+    height: 120px;
+    margin: 1rem auto;
+    border-radius: 100%;
+    background: $bodyBackground;
+    img{
+      width: 50%;
+    }
+  }
+}
+.us{
+  padding: 0 5%;
+  clear: both;
+  text-align: center;
+  line-height: 4rem;
+  background: #ccbecf;
+  div{
+    display: inline-block;
+  }
+  span{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $blueColor;
+  }
+  .mr{
+    margin-right: 1rem;
+  }
+}
+.content2{
+  padding: 3rem  0;
+  .pd{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .black{
+    margin-top: 3rem;
+    color: $text-color;
+  }
+  div{
+    margin-top: 1rem;
+  }
+  .pm0{
+    margin-top: 0;
+    h4{
+      color: $greenColor;
+      margin-top: 5rem;
+    }
+    .pd{
+      width: 80%;
+     margin: 1rem;
+    }
+  }
+  .block{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-color: $greenColor;
+    margin-right: 1rem;
+    margin-top: 2px;
+  }
+  span{
+    color: $blueColor ;
+  }
+  .doctor{
+    text-align: center;
+    span{
+      display: inline-block;
+     margin: 1rem 0 ;
+    }
+    .text-center{
+      font-weight: bold;
+    }
+    img{
+      margin: 1rem 0;
+    }
+    div{
+      text-align: left;
+      display: inline-block;
+    }
+  }
+  .course{
+    padding: 3rem 0;
+    font-size: 1.2rem;
+    color: $blueColor;
+    background: $purpleColor;
+    h4{
+      color: $blueColor;
+    }
+    .pd{
+      width: 145px;
+    }
+    .bold{
+      margin: 1rem 0;
+    }
+  }
+  .fun-box{
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    background: $bodyBackground;
+  }
+  .fun{
+    //max-width: 320px;
+  }
+  .extend{
+    //padding: 0 5rem;
+    text-align: center;
+    div{
+      display: inline-block;
+      text-align: left;
+    }
+    img{
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    p{
+    }
+  }
+}
+.content3{
+  padding: 3rem ;
+  img{
+    margin-bottom: 2rem;
+  }
+  .pd{
+    margin-bottom: 2rem;
+    background: $bodyBackground;
+    border-radius: 15px;
+    overflow: hidden;
+    p{
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+    }
+  }
+  .img{
+    width: 100%;
+  }
+}
+.environment{
+  img{
+    margin-bottom: 2rem;
+    border-radius: 15px;
+  }
+}
+.carousel-indicators{
+  li{
+    width:1.5vw;
+    height: 1.5vw;
+    border:solid 1px black;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0) !important;
+  }
+  .active{
+    width:1.5vw;
+    height:1.5vw;
+    margin: 1px;
+    background-color:black !important;
+  }
+}
