@@ -1,0 +1,56 @@
+@charset "UTF-8";
+.game {
+  padding: 20px 0;
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 12px; }
+
+.videoCtrl {
+  display: flex;
+  justify-content: space-between; }
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-bottom: 30px;
+  color: #333; }
+
+.authorName {
+  position: relative;
+  bottom: -2px;
+  margin-left: .5rem; }
+
+.explain {
+  font-size: 18px;
+  margin: 22px 0 12px;
+  color: #333; }
+
+@media screen and (max-width: 992px) {
+  .nav--small_left {
+    margin-left: 17%; }
+
+  .nav--small_right {
+    margin-right: 17%; } }
+@media screen and (max-width: 768px) {
+  .nav--small_left {
+    margin-left: 5%; }
+
+  .nav--small_right {
+    margin-right: 5%; } }
+/* 缓冲图片绝地定位居中 */
+.flash {
+  background-image: url("../img/onload.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 60px 60px; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+a:hover {
+  text-decoration: none;
+  color: #169e93; }
+
+/*# sourceMappingURL=game.css.map */

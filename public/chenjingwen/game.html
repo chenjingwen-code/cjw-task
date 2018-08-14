@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作品展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="scss/normalize.css">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="scss/common.css">
+    <link rel="stylesheet" href="scss/zxx.lib.css">
+    <link rel="stylesheet" href="scss/game.css">
+</head>
+<body>
+<header>
+    <div class="container-fluid" style="background-color: #ccbecf">
+        <div class="container nav1 hidden-xs">
+            <div class="row ">
+                <div class="col-xs-3">
+                    <a  href="home.html">
+                        <img  src="img/logo.png" height="60" width="176"/>
+                    </a>
+                </div>
+                <div class="col-xs-9 " style="text-align: right">
+                    <a  href="home.html">首页</a>
+                    <a  href="home.html#course">课程体系</a>
+                    <a  href="home.html#loaction">上课地点</a>
+                    <a  href="about.html">关于我们</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default visible-xs" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" style="background:#ccbecf " data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img  style="margin: 5px 0 0 30px" src="img/logo.png" height="60" width="176"/>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a  href="home.html">首页</a></li>
+                    <li><a  href="home.html#course">课程体系</a></li>
+                    <li><a href="home.html#loaction">上课地点</a></li>
+                    <li><a href="about.html">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class=" col-xs-10 col-xs-push-1 col-md-12 col-md-push-0 titleTop mt30 mb30 f16">
+                <span><a href="home.html">首页</a></span>
+                &gt;
+                <span>作品</span>
+            </div>
+            <div class="col-xs-10 col-xs-push-1  col-md-12 col-md-push-0 game">
+                <div class="col-md-8  col-xs-12 ">
+                    <div id="showPcFlash" class="" style="width: 100%; display: block;" width="100%" height="400">
+                        <!--<embed id="gameFlash" class="flash" src="game1-zhangxaioqian.swf" style="LEFT: 0px; POSITION: absolute; TOP:0px"  quality="high" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="400">-->
+                    </div>
+                    <div id="showPhoneVideo" class="PhoneVideo dn">
+                        <video id="gameVideo" width="100%" height="240" controls="controls">
+                        <!--&lt;!&ndash;<source  type="video/mp4" />&ndash;&gt;-->
+                        </video>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-push-0  col-xs-10 col-xs-push-1">
+                    <div class="mt30">
+                        <p class="title">作品：<span class=" title" id="gameTitle">反弹小球</span></p>
+                        <div class="m0">
+                            <img src="img/gameAuthor.png">
+                            <span class="authorName" id="gameAuthor">张笑千</span>
+                        </div>
+                        <p class="explain">作品说明：</p>
+                        <p id="gameExplain">游戏中，我们需要通过小乌龟来接住小球，使皮球不要碰到地面，锻炼你的敏捷操作能力，现在就让我们一起来试试吧！</p>
+                        <div id="showPc" class="dn" style="display: block;">
+                            <p class="explain">如何开始：</p>
+                            <p id="gameStart">游戏加载完毕后点击播放按钮-选中游戏难度即可开始游戏</p>
+                            <p class="explain">操作说明：</p>
+                            <p id="gameOperation">鼠标左右滑动操作</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-6 col-sm-push-2 col-xs-push-0 col-xs-12 fl">
+                <div>
+                    <p><span class="bold">客服电话:</span>0371-67913389</p>
+                    <p><span class="bold">工作时间:</span>周一至周日</p>
+                    <p><span class="bold">联系邮箱:</span>15638891136</p>
+                    <p><span class="bold">总部地址:</span>上海市宝山区绿地领海13楼1302</p>
+                    <p><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1145139410&amp;site=qq&amp;menu=yes" class="btn btn-danger">联系我们</a></p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-push-2 col-xs-push-0 col-xs-12 fr "  >
+                <div>
+                    <img src="img/QR.png" height="112" width="112" style="margin-bottom: 10px"/>
+                    <p>扫描二维码或搜索编程王关注即可</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/game.js"></script>
+</html>
